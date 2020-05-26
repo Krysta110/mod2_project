@@ -1,0 +1,25 @@
+<%=form_with model: @student do |f|%>
+    <%=f.label "First Name: "%>
+    <%=f.text_field :first_name%>
+    <br>
+    <%=f.label "Last Name: "%>
+    <%=f.text_field :last_name%>
+    <br>
+    <%=f.label "Age: "%>
+    <%=f.text_field :age%>
+    <br>
+    <%=f.label "Gender: "%>
+    <%=f.text_field :gender%>
+    <br>
+    <%=f.label "Grade Level: "%>
+    <%=f.text_field :grade_level%>
+    <br>
+    
+    <%=f.label "Teachers: "%>
+    <%=f.collection_check_boxes :id, @teachers, :id, :last_name%>
+
+    <br>
+
+
+    <%=f.submit%>
+<%end%>

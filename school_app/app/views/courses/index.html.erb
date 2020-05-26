@@ -1,0 +1,9 @@
+<h4>All Courses:</h4>
+
+<ul>
+<% @courses.each do |course|%>
+    <li>
+    <%= link_to course.name, "/courses/#{course.id}"%>
+    </li>
+<%end%>
+</ul>

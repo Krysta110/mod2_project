@@ -1,0 +1,9 @@
+<%=form_with model: @course do |f|%>
+    <%=f.label "Name: "%>
+    <%=f.text_field :name%>
+    <br>
+    <%=f.label "Teacher: "%>
+    <%=f.collection_select :teacher_id, @teachers, :id, @teachers.full_name%>
+    <br>
+    <%=f.submit%>
+<%end%>
