@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
 
-    before_action :current_teacher, only: [:show]
+    before_action :current_teacher, only: [:show, :edit, :update]
 
     def index
         @teachers = Teacher.all 
@@ -20,6 +20,8 @@ class TeachersController < ApplicationController
     end
 
     def update
+        @teacher = Teacher.create(teacher_params)
+        redirect_to @teacher
     end
 
 
@@ -38,8 +40,6 @@ class TeachersController < ApplicationController
     def teacher_params
         params.require(:teacher).permit(:first_name, :last_name)
     end
+   
 
 end
-
-
-

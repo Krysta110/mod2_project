@@ -1,0 +1,15 @@
+<%=form_with model: @assignment do |f|%>
+    <%=f.label "Course: "%>
+    <%=f.collection_select :course_id, @courses, :id, :name%>
+    <br>
+    <%=f.label "Date: "%>
+    <%=f.text_field :date%>
+    <br>
+    <%=f.label "Description: "%>
+    <%=f.text_field :description %>
+    <br>
+    <%=f.label "Content: "%><br>
+    <%=f.text_area :content %>
+    <br>
+    <%=f.submit%>
+<%end%>

@@ -1,6 +1,7 @@
 class Student < ApplicationRecord
-    has_many :students_teachers
-    has_many :teachers, through: :students_teachers
+
+    has_many :lists
+    has_many :courses, through: :lists
 
 
     def full_name

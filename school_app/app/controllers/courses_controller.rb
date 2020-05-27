@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
 
-    before_action :current_course, only: [:show]
+    before_action :current_course, only: [:show, :edit, :update]
 
     def index
         @courses = Course.all 
@@ -8,20 +8,22 @@ class CoursesController < ApplicationController
 
     def new
         @course = Course.new
-        @students = Student.all
         @teachers = Teacher.all
     end
 
     def create 
+        # byebug
         @course = Course.create(course_params)
-        redirect_to @course
+        redirect_to "/courses/#{@course.id}"
     end
 
     def edit
-        
+        @teachers = Teacher.all
     end
 
     def update
+        @course.update(course_params)
+        redirect_to "/courses/#{@course.id}"
     end
 
 
@@ -40,4 +42,5 @@ class CoursesController < ApplicationController
     def course_params
         params.require(:course).permit(:name, :teacher_id)
     end
+
 end

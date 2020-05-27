@@ -1,3 +1,7 @@
+<%=render "menu"%>
+
+
+
 <h4><%=@student.full_name%></h4>
 
 <p>
@@ -6,15 +10,18 @@ Gender: <%=@student.gender%><br>
 Grade Level: <%=@student.grade_level%><br>
 <br>
 <br>
-Teachers:
+Courses:
 <ul>
-    <%=@student.teachers.each do |teacher|%>
+    <%@student.courses.each do |courses|%>
         <li>
-            <%= link_to teacher.full_name, "/teachers/#{teacher.id}"%>
+            <%=link_to courses.name, "/courses/#{courses.id}"%>
         </li>
     <%end%>
 </ul>
-
-
+<br>
+<br>
+<br>
+<%= link_to "Edit This Student", "/students/#{@student.id}/edit" %>
+    
 </p>
 
