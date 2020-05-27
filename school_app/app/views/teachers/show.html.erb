@@ -1,16 +1,21 @@
+<%=render "menu"%>
+
+
+
 <h4><%=@teacher.full_name%></h4>
-<br>
-<br>
+
 
 <p>
 Courses I Teach: <br>
 <ul>
-    <%=@teacher.courses.each do |course|%>
+    <%@teacher.courses.each do |course|%>
         <li>
             <%=link_to course.name, "/courses/#{course.id}"%>
         </li>
     <%end%>
 </ul>
 
-
 </p>
+<br>
+<br>
+<%= link_to "Edit This Teacher", "/teachers/#{@teacher.id}/edit" %>

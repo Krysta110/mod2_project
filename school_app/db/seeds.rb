@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
 Student.destroy_all 
 Teacher.destroy_all 
 Course.destroy_all 
@@ -33,6 +35,17 @@ Course.create(name: "Math 11", teacher_id: teachers.ids.sample)
 Course.create(name: "Math 12", teacher_id: teachers.ids.sample)
 
 
+Course.create(name: "Science 09", teacher_id: teachers.ids.sample)
+Course.create(name: "Science 10", teacher_id: teachers.ids.sample)
+Course.create(name: "Science 11", teacher_id: teachers.ids.sample)
+Course.create(name: "Science 12", teacher_id: teachers.ids.sample)
 
+Course.create(name: "English 09", teacher_id: teachers.ids.sample)
+Course.create(name: "English 10", teacher_id: teachers.ids.sample)
+Course.create(name: "English 11", teacher_id: teachers.ids.sample)
+Course.create(name: "English 12", teacher_id: teachers.ids.sample)
 
-# Faker::Date.between(from: 2.days.ago, to: Date.today)
+Course.create(name: "History 09", teacher_id: teachers.ids.sample)
+Course.create(name: "History 10", teacher_id: teachers.ids.sample)
+Course.create(name: "History 11", teacher_id: teachers.ids.sample)
+Course.create(name: "History 12", teacher_id: teachers.ids.sample)
