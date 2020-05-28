@@ -166,7 +166,6 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
-    tabs_on_rails (3.0.0)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -208,14 +207,13 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
-  tabs_on_rails
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers
 
 RUBY VERSION
-   ruby 2.6.1p33
+   ruby 2.6.1
 
 BUNDLED WITH
    2.1.4
