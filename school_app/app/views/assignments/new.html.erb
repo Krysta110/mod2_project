@@ -1,5 +1,9 @@
 <%=render "menu"%>
-
+<% if flash[:errors]%>
+<% flash[:errors].each do |e| %>
+    <%= e%>
+    <%end %>
+    <%end%>
 <h4>Add A New Assignment</h4>
 
 <%=render 'form'%>

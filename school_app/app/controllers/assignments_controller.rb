@@ -13,7 +13,13 @@ class AssignmentsController < ApplicationController
     def create 
         # byebug
         @assignment = Assignment.new(assignment_params)
+        if @assignment.valid?
+            @assignment.save
         redirect_to "/assignments/#{@assignment.id}"
+        else 
+            flash[:errors] = @assignment.errors.full_messages
+            redirect_to "/assignments/new"
+        end
     end
 
     def edit
@@ -35,7 +41,7 @@ class AssignmentsController < ApplicationController
     private
 
     def assignment_params
-        params.require(:assignment).permit(:date, :description, :content, :course_id)
+        params.require(:assignment).permit(:date, :description, :content, :difficulty, :course_id)
     end
     
     
