@@ -28,7 +28,13 @@ class AssignmentsController < ApplicationController
 
     def update
         @assignment.update(assignment_params)
+        if @assignment.valid?
+            @assignment.save
         redirect_to "/assignments/#{@assignment.id}"
+        else 
+            flash[:errors] = @assignment.errors.full_messages
+            redirect_to "/assignments/#{@assignment.id}/edit"
+        end
     end
 
     def show

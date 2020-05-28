@@ -1,4 +1,9 @@
 <%=render "menu"%>
+<% if flash[:errors]%>
+<% flash[:errors].each do |e| %>
+    <%= e%>
+    <%end %>
+    <%end%>
 
 
 

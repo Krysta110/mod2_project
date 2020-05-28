@@ -13,7 +13,13 @@ class StudentsController < ApplicationController
 
     def create 
         @student = Student.create(student_params)
+        if @student.valid?
+            @student.save
         redirect_to @student
+        else
+            flash[:errors] = @student.errors.full_messages
+            redirect_to "/students/new"
+        end
     end
 
     def edit
@@ -22,7 +28,14 @@ class StudentsController < ApplicationController
 
     def update
         @student.update(student_params)
-        redirect_to "/students/#{@student.id}"
+        if @student.valid?
+            @student.save
+            redirect_to "/students/#{@student.id}"
+        else
+            flash[:errors] = @student.errors.full_messages
+            redirect_to "/students/#{@student.id}/edit"
+        end
+        
     end
 
     def show
