@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
 
     def update
         @student.update(student_params)
-        redirect_to "/students/#{@student.id}"
+        redirect_to @student
     end
 
     def show
@@ -35,7 +35,7 @@ class StudentsController < ApplicationController
     private
 
     def student_params
-        params.require(:student).permit(:first_name, :last_name, :age, :gender, :grade_level, course_ids:[])
+        @student = params.require(:student).permit(:first_name, :last_name, :age, :gender, :grade_level, course_ids:[])
     end
     
     

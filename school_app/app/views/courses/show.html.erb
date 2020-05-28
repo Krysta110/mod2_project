@@ -12,7 +12,8 @@ Assignments For This Course:
 <ul>
     <%@course.assignments.each do |assignment|%>
         <li>
-            <%= assignment.date link_to assignment.description "/assignments/#{assignment.id}"%>
+            <%=assignment.date%>
+            <%=link_to assignment.description, "/assignments/#{assignment.id}"%>
         </li>
     <%end%>
 </ul>

@@ -23,7 +23,7 @@ class CoursesController < ApplicationController
 
     def update
         @course.update(course_params)
-        redirect_to "/courses/#{@course.id}"
+        redirect_to @course
     end
 
 
@@ -40,7 +40,7 @@ class CoursesController < ApplicationController
     private
 
     def course_params
-        params.require(:course).permit(:name, :teacher_id)
+        @course = params.require(:course).permit(:name, :teacher_id)
     end
 
 end

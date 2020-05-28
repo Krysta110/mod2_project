@@ -1,5 +1,6 @@
 class AssignmentsController < ApplicationController
-    before_action :current_assignment, only: [:show, :edit, :update]
+ 
+ before_action :current_assignment, only: [:show, :edit, :update]
 
     def index
         @assignments = Assignment.all 
@@ -11,13 +12,12 @@ class AssignmentsController < ApplicationController
     end
 
     def create 
-        # byebug
-        @assignment = Assignment.new(assignment_params)
-        redirect_to "/assignments/#{@assignment.id}"
+        @assignment = Assignment.create(assignment_params)
+        redirect_to @assignment
     end
 
     def edit
-    
+        @courses = Course.all
     end
 
     def update
@@ -25,8 +25,12 @@ class AssignmentsController < ApplicationController
         redirect_to "/assignments/#{@assignment.id}"
     end
 
+
     def show
+
     end
+
+
 
     def current_assignment 
         @assignment = Assignment.find(params[:id])
@@ -35,9 +39,6 @@ class AssignmentsController < ApplicationController
     private
 
     def assignment_params
-        params.require(:assignment).permit(:date, :description, :content, :course_id)
+        @assignment = params.require(:assignment).permit(:date, :description, :content, :course_id)
     end
-    
-    
-
 end

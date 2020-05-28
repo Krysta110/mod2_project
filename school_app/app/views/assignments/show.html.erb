@@ -1,5 +1,9 @@
 <%=render "menu"%>
 
+<h4>Course: <%= link_to @assignment.course.name, @assignment.course%> </h4>
 <h4> Assignment Date: <%= @assignment.date %> </h4>
 <h4> Assignment Description: <%= @assignment.description %> </h4>
-<h4> Assignment Content: <%= @assignment.content %> </h4>
+Assignment Content:
+<br>
+<br>
+<%= @assignment.content %> 
