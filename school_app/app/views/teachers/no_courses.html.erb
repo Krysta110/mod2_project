@@ -2,12 +2,12 @@
 
 
 
-<h4>Students With No Courses:</h4>
+<h4>Teachers With No Courses:</h4>
 
 <ul>
-    <%Student.no_courses.each do |student|%>
+    <%Teacher.no_courses.each do |teach|%>
         <li>
-            <%=link_to student.full_name, "/students/#{student.id}"%>
+            <%=link_to teach.full_name, "/teachers/#{teach.id}"%>
         </li>
     <%end%>
 </ul>

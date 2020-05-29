@@ -23,6 +23,7 @@ class AssignmentsController < ApplicationController
     end
 
     def edit
+        @courses = Course.all
     
     end
 

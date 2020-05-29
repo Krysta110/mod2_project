@@ -32,7 +32,11 @@ class CoursesController < ApplicationController
     end
 
     def services
-        @course = Course.most_students
+        @course_ms = Course.most_students
+        @course_ma = Course.most_assignments
+        @course_h = Course.hardest
+        @course_e = Course.easiest
+        # byebug
         render :course_services
     end
 
@@ -41,6 +45,10 @@ class CoursesController < ApplicationController
         render :course_no_students
     end
 
+    def no_assignments
+        @courses = Course.no_assignments
+        render :no_assignments
+    end
 
     def current_course 
         @course = Course.find(params[:id])

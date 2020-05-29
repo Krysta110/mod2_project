@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
 resources :students, :teachers, :courses, :assignments
 
+get '/home', to: 'application#home', as: :home
 
 get '/teachers/:id/list_all_my_students', to: 'teachers#list_all_my_students', as: :list_all_my_students
 get '/teacher/services', to: 'teachers#services', as: :services
@@ -16,5 +17,7 @@ get '/student/no_courses', to: 'students#no_courses', as: :student_no_courses
 
 get '/course/services', to: 'courses#services', as: :course_services
 get '/course/no_students', to: 'courses#no_students', as: :course_no_students
+get '/course/no_assignments', to: 'courses#no_assignments', as: :no_assignments
+
 
 end

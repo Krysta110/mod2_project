@@ -12,12 +12,14 @@ Assignments For This Course:
 <ul>
     <%@course.assignments.each do |assignment|%>
         <li>
-            <%= assignment.date link_to assignment.description "/assignments/#{assignment.id}"%>
+        <%=assignment.date %>
+            <%=link_to assignment.description, "/assignments/#{assignment.id}"%>
         </li>
     <%end%>
 </ul>
 <br>
-<%= link_to "Add An Assignment For This Course", "/assignments/new" %>
+
+<%= link_to "Add An Assignment For This Course", "/assignments/new" %> 
 <br>
 <br>
 <br>

@@ -6,5 +6,16 @@
 <%=link_to "Courses With No Students", "/course/no_students"%>
 <br>
 <br>
-Course with most students: <%=link_to @course.name, "/courses/#{@course.id}"%>
-
+Course with most students: <%=link_to @course_ms.name, "/courses/#{@course_ms.id}"%>
+<br>
+<br>
+<%=link_to "Courses With No Assignments", "/course/no_assignments"%>
+<br>
+<br>
+Course with most assignments: <%=link_to @course_ma.name, "/courses/#{@course_ma.id}"%>
+<br>
+<br>
+Course with hardest assignments: <%=link_to @course_h.name, "/courses/#{@course_h.id}"%>
+<br>
+<br>
+Course with easiest assignments: <%=link_to @course_e.name, "/courses/#{@course_e.id}"%>

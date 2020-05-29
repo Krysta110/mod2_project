@@ -4,3 +4,7 @@
 <h4> Assignment Difficulty: <%= @assignment.difficulty %> </h4>
 <h4> Assignment Description: <%= @assignment.description %> </h4>
 <h4> Assignment Content: <%= @assignment.content %> </h4>
+
+
+
+<%= link_to "Edit This Assignment", "/assignments/#{@assignment.id}/edit" %>
