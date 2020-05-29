@@ -1,0 +1,17 @@
+<%=render "menu"%>
+
+
+
+<h4>Courses with No Students:</h4>
+
+<ul>
+    <%@courses.each do |course|%>
+        <li>
+            <%=link_to course.name, "/courses/#{course.id}"%>
+        </li>
+    <%end%>
+</ul>
+
+</p>
+<br>
+<br>

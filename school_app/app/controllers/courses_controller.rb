@@ -31,6 +31,15 @@ class CoursesController < ApplicationController
 
     end
 
+    def services
+        @course = Course.most_students
+        render :course_services
+    end
+
+    def no_students
+        @courses = Course.no_students
+        render :course_no_students
+    end
 
 
     def current_course 

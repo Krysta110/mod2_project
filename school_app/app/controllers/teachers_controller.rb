@@ -20,7 +20,7 @@ class TeachersController < ApplicationController
     end
 
     def update
-        @teacher = Teacher.create(teacher_params)
+        @teacher.update(teacher_params)
         redirect_to @teacher
     end
 
@@ -29,7 +29,18 @@ class TeachersController < ApplicationController
 
     end
 
+    def list_all_my_students
+        @teacher = current_teacher
+        render :list_all_my_students
+    end
 
+    def services
+        render :services
+    end
+
+    def no_courses
+        render :no_courses
+    end
 
     def current_teacher 
         @teacher = Teacher.find(params[:id])

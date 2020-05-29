@@ -12,7 +12,7 @@ class Teacher < ApplicationRecord
         self.all.each do |teach|
             if teach.courses.count > temp_count
                 temp_count = teach.courses.count
-                temp = teach 
+                temp = teach
             end
         end
         temp
@@ -22,10 +22,10 @@ class Teacher < ApplicationRecord
         temp = [ ]
         self.all.each do |teach|
             if teach.courses.count == 0
-                temp << teach 
+                temp << teach
             end
         end
-        temp
+        temp.uniq
     end
 
     def self.most_students
@@ -45,11 +45,11 @@ class Teacher < ApplicationRecord
         temp
     end
 
-    def list_all_my_students
+    def find_all_my_students
         all_students = []
         self.courses.each do |course|
             course.students.each do |student|
-                all_students << student.full_name
+                all_students << student
             end
         end
         all_students.uniq

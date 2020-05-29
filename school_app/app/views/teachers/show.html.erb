@@ -1,12 +1,8 @@
 <%=render "menu"%>
 
-
-
 <h4><%=@teacher.full_name%></h4>
 
-
-<p>
-Courses I Teach: <br>
+Courses I Teach:
 <ul>
     <%@teacher.courses.each do |course|%>
         <li>
@@ -15,7 +11,13 @@ Courses I Teach: <br>
     <%end%>
 </ul>
 
-</p>
+
+<br>
+<%= link_to "View All My Students", "/teachers/#{@teacher.id}/list_all_my_students" %>
 <br>
 <br>
 <%= link_to "Edit This Teacher", "/teachers/#{@teacher.id}/edit" %>
+
+
+
+

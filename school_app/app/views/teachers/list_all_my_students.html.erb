@@ -1,0 +1,22 @@
+<%=render "menu"%>
+
+
+
+<h4>Teacher: <%=@teacher.full_name%></h4>
+
+
+<p>
+All My Students: <br>
+<ul>
+    <%@teacher.find_all_my_students.each do |student|%>
+        <li>
+            <%=link_to student.full_name, "/students/#{student.id}"%>
+        </li>
+    <%end%>
+</ul>
+
+</p>
+<br>
+<br>
+
+<%= link_to "Back To This Teacher", "/teachers/#{@teacher.id}" %>

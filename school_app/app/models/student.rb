@@ -31,10 +31,10 @@ class Student < ApplicationRecord
         temp
     end
 
-    def list_all_my_teachers
+    def find_all_my_teachers
         all_teachers = []
         self.courses.each do |course|
-                all_teachers << course.teacher.full_name
+                all_teachers << course.teacher
         end
         all_teachers.uniq
     end

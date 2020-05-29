@@ -1,0 +1,11 @@
+<%=render 'menu'%>
+
+<h4>Student Services</h4>
+
+
+<%=link_to "Students with No Courses", "/student/no_courses"%>
+<br>
+<br>
+Student with most courses: <%=link_to Student.most_courses.full_name, "/students/#{Student.most_courses.id}"%>
+<br>
+<br>

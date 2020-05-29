@@ -1,0 +1,13 @@
+<%=render 'menu'%>
+
+<h4>Teacher Services</h4>
+
+
+<%=link_to "Teachers with No Courses", "/teacher/no_courses"%>
+<br>
+<br>
+Teacher with most courses: <%=link_to Teacher.most_courses.full_name, "/teachers/#{Teacher.most_courses.id}"%>
+<br>
+<br>
+Teacher with most students: <%=link_to Teacher.most_students.full_name, "/teachers/#{Teacher.most_students.id}"%>
+

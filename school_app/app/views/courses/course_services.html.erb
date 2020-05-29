@@ -1,0 +1,10 @@
+<%=render 'menu'%>
+
+<h4>Course Services</h4>
+
+
+<%=link_to "Courses With No Students", "/course/no_students"%>
+<br>
+<br>
+Course with most students: <%=link_to @course.name, "/courses/#{@course.id}"%>
+
