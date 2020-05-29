@@ -14,12 +14,10 @@
     <%=f.label "Grade Level: "%>
     <%=f.text_field :grade_level%>
     <br>
-    
- 
     <br>
     <%=f.label "Courses: "%><br>
     <%=f.collection_check_boxes :course_ids, @courses, :id, :name%>
-
+    
 <br>
 <br>
 
